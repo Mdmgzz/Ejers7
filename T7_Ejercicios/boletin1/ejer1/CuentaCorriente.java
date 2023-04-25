@@ -1,7 +1,11 @@
-package ejer04;
+package ejer1;
 
+/**
+ * @author Migue
+ *
+ */
 public class CuentaCorriente {
-public enum Sexo {Masculino,Femenino}
+	public enum Sexo {Masculino,Femenino}
 	
 	String DNI;
 	String nombre;
