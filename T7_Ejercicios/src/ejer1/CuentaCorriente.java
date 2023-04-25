@@ -1,9 +1,18 @@
 package ejer1;
 
+/**
+ * @author Migue
+ *
+ */
 public class CuentaCorriente {
+	public enum Sexo {Masculino,Femenino}
+	
 	String DNI;
 	String nombre;
 	int saldo;
+	Sexo sexo;
+	
+	
 	/**
 	 * constructor de CuentaCorriente
 	 */
@@ -26,12 +35,26 @@ public class CuentaCorriente {
 	 * @param nombre
 	 * @param saldo
 	 */
-	public CuentaCorriente(String DNI,String nombre, int saldo) {
+	public CuentaCorriente(String DNI,String nombre, int saldo,String sexo) {
 		this.DNI=DNI;
 		this.nombre=nombre;
 		this.saldo=saldo;
+		this.sexo = Sexo.valueOf(sexo);
 	}
-	
+	/**
+	 * getter del atributo sexo
+	 * @return
+	 */
+	public Sexo getSexo() {
+		return sexo;
+	}
+	/**
+	 * setter del atrib sexo
+	 * @param sexo
+	 */
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
 	/**
 	 * sirve para realizar la operacion para sacar dinero
 	 * @param cantidad de dinero que quieres sacar 
@@ -66,7 +89,7 @@ public class CuentaCorriente {
 	public String toString() {
 		String cad;
 		
-		cad=DNI+"\n"+nombre+"\n"+saldo;
+		cad=DNI+"\n"+nombre+"\n"+saldo+"\n"+sexo;
 		return cad;
 	}
 }
